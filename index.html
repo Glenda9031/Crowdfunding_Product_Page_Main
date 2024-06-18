@@ -9,10 +9,38 @@
   <title>Frontend Mentor | Crowdfunding product page</title>
 </head>
 <body>
-  About
-  Discover
-  Get Started
+  <header>
+    <a href="/" aria-label="Go to Homepage">
+      <img src="./images/logo.svg" alt="">
+    </a>
 
+    <nav>
+      <button class="btn btn-nav" type="button" aria-label="navigation">
+        <img src="./images/icon-hamburger.svg" alt="">
+      </button>
+
+      <div id="listContainer" class="list-container">
+        <ul>
+          <li><a href="#aboutSection">About</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Get Started</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <picture>
+        <source media="(max-width: 47.9375rem)" srcset="./images/image-hero-mobile.jpg" type="image/jpg">
+        <source media="(max-width: 48rem)" srcset="./images/image-hero-desktop.jpg" type="image/jpg">
+        <img src="./images/image-hero-mobile.jpg" alt="">
+      </picture>
+    </div>
+
+    
+  </main>
+  
   Mastercraft Bamboo Monitor Riser
   A beautiful & handcrafted monitor stand to reduce neck and eye strain.
 
