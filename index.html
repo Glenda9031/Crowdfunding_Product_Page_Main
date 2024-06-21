@@ -15,11 +15,11 @@
     </a>
 
     <nav>
-      <button class="btn btn-nav" type="button" aria-label="navigation">
+      <button class="btn btn-nav" type="button" aria-label="navigation" aria-controls="listContainer">
         <img src="./images/icon-hamburger.svg" alt="">
       </button>
 
-      <div id="listContainer" class="list-container">
+      <div id="listContainer" class="list-container" role="navigation" aria-expanded="false">
         <ul>
           <li><a href="#aboutSection">About</a></li>
           <li><a href="#">Discover</a></li>
@@ -44,8 +44,8 @@
       <p class="intro__text-subtitle">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 
       <div class="intro__buttons">
-        <button class="btn btn-primary" id="backProje">Back this project</button>
-        <button class="btn btn-secondary" id="bookmarkProject"><img src="./images/icon-bookmark.svg" alt="bookmark icon"><span>Bookmark</span></button>
+        <button class="btn btn-primary" id="backProject" type="button">Back this project</button>
+        <button class="btn btn-secondary" id="bookmarkProject" aria-label="bookmark"><img src="./images/icon-bookmark.svg" alt="bookmark icon"><span>Bookmark</span></button>
       </div>
     </div>
 
@@ -60,7 +60,7 @@
       </div>
       <div class="backers__duration">
         <p class="backers__title">56</p>
-        <p class="backer_subtitle"> days left</p>
+        <p class="backers_subtitle"> days left</p>
       </div>
 
       <div class="backers__progress-max">
@@ -76,12 +76,11 @@
         focused on the task at hand. Featuring artisan craftsmanship, the simplicity of design creates 
           extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under 
           the stand.</p>
-    </div>
 
     <ul>
       <li class="card" data-reward="1">
-        <div class="card-container">
-          <h3 class="card-container">Bamboo Stand</h3>
+        <div class="card__container">
+          <h3 class="card__title">Bamboo Stand</h3>
           <p class="card__pledge">Pledge $<span>25</span> or more</p>
         </div>
         <p class="card__description">You get an ergonomic stand made of natural bamboo. You've helped us 
@@ -118,6 +117,7 @@
           </div>  
       </li>
     </ul>
+  </div>
 
   </main>
 
