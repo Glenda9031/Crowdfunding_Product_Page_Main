@@ -1,10 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
 
 :root {
-    --moderate-cyan: hsl(176, 50%, 47%);
-    --dark-cyan: hsl(176, 72%, 28%);
-    --black: hsl(0, 0%, 0%);
-    --dark-gray: hsl(0, 0%, 48%);
+  --ff-primary: 'Commissioner', sans-serif;
+
+  --fs-xxl: 1.5rem;
+  --fs-xl: 1rem;
+  --fs-lg: 0.875rem;
+  --fs-md: 0.813rem;
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+
+  --clr-primary-medium: hsl(176, 50%, 47%);
+  --clr-primary-dark: hsl(176, 72%, 28%);
+
+  --clr-neutral-lightest: hsl(100, 100%, 100%);
+  --clr-neutral-light: hsl(0, 0%, 85%);
+  --clr-neutral-dark: hsl(0, 0%, 48%);
+  --clr-neutral-darkest: hsl(0, 0%, 0%);
+
+  --clr-overlay: hsla(0, 0%, 0%, 0.35);
 }
 
 /* Reset */
@@ -94,5 +110,85 @@ html {
     scroll-margin-block: 5ex;
   }
   /* Reset end */
+
+/* Typography */  
   
+body [
+  font-family: var(--ff-primary);
+  font-size: var(--fs-md);
+  color: var(--clr-neutral-dark);
+]
+
+h1, h2 {
+  font=size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-darkest);
+}
+
+h3,
+label,
+form .card__submit-input input {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-darkest);
+}
+
+label:hover {
+  color: var(--clr-primary-medium);
+}
+
+a {
+  font-size: var(--fs-xl);
+  color: var(--clr-neutral-darkest);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+button:not(button#bookmarkProject) {
+  font=size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-lightest);
+}
+
+button#bookmarkProject {
+  color: var(--clr-neutral-dark);
+  font-weight: var(--fw-bold);
+}
+
+.backers__title,
+.card__stock span {
+  font-size: var(--fs-xxl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-darkest);
+}
+
+.card__pledge {
+  color: var(--clr-primary-medium);
+  font-weight: var(--fw-margin);
+}
+
+form .card__submit-input input {
+  color: var(--clr-neutral-dark);
+}
+
+/* Layout */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
   
+}
+ 
+
+
+
+
+
