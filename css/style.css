@@ -111,26 +111,26 @@ html {
   }
   /* Reset end */
 
-/* Typography */  
-  
-body [
+  /* typography */
+body {
   font-family: var(--ff-primary);
   font-size: var(--fs-md);
   color: var(--clr-neutral-dark);
-]
+}
 
-h1, h2 {
-  font=size: var(--fs-xl);
-  font-weight: var(--fw-bold);
+h1,
+h2 {
+  font-size: var(--fs-xl);
   color: var(--clr-neutral-darkest);
+  font-weight: var(--fw-bold);
 }
 
 h3,
 label,
 form .card__submit-input input {
   font-size: var(--fs-lg);
-  font-weight: var(--fw-bold);
   color: var(--clr-neutral-darkest);
+  font-weight: var(--fw-bold);
 }
 
 label:hover {
@@ -140,12 +140,12 @@ label:hover {
 a {
   font-size: var(--fs-xl);
   color: var(--clr-neutral-darkest);
-  text-decoration: none;
   font-weight: var(--fw-medium);
+  text-decoration: none;
 }
 
 button:not(button#bookmarkProject) {
-  font=size: var(--fs-lg);
+  font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-lightest);
 }
@@ -158,35 +158,203 @@ button#bookmarkProject {
 .backers__title,
 .card__stock span {
   font-size: var(--fs-xxl);
-  font-weight: var(--fw-bold);
   color: var(--clr-neutral-darkest);
+  font-weight: var(--fw-bold);
 }
 
 .card__pledge {
   color: var(--clr-primary-medium);
-  font-weight: var(--fw-margin);
+  font-weight: var(--fw-medium);
 }
 
-form .card__submit-input input {
+form .card__submit-input label {
   color: var(--clr-neutral-dark);
 }
 
-/* Layout */
-
+/* layout */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0;
   overflow-x: hidden;
-  
 }
+
+header {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  padding: 2rem 1.5rem;
+  transition: padding 0.25s ease-in-out;
+  z-index: 20;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-overlay);
+  z-index: 10;
+  translate: 0 -150%;
+  transition: translate 0.35s ease;
+}
+
+nav ul {
+  background-color: var(--clr-neutral-lightest);
+  margin: 5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 6px -4px var(--clr-neutral-dark);
+}
+
+nav ul li {
+  padding: 1rem;
+}
+
+nav ul li:not(:first-child) {
+  border-top: 1px solid var(--clr-neutral-light);
+}
+
+.hero {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    var(--clr-overlay),
+    var(--clr-neutral-dark)
+  );
+}
+
+.hero picture img {
+  width: 100%;
+  height: 35vh;
+  mix-blend-mode: overlay;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 45.625rem;
+  background-color: var(--clr-neutral-lightest);
+  box-shadow: 0 0 .375rem -0.25rem var(--clr-neutral-dark);
+  margin: 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.intro.container {
+  padding: 3rem 1.5rem;
+}
+
+.intro {
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  margin-top: 15rem;
+}
+
+.intro__logo {
+  position: absolute;
+  top: -1.5rem;
+}
+
+.intro h1 {
+  padding: 0 2rem;
+}
+
+.intro__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+ button#bookmarkProject {
+  background-color: hsla(0, 0%, 100%, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 1rem;
+  border-radius: 2rem;
+  transition: opacity 0.25s ease;
+ }
+
+ button#bookmarkProject:hover {
+  opacity: 0.75;
+ }
+
+ button#bookmarkProject span {
+  display: none;
+ }
  
+ .btn {
+  background: transparent;
+  border: transparent;
+ }
+
+ .btn:hover,
+ input,
+ label {
+  cursor: pointer;
+ }
+
+ .btn-primary {
+  background-color: var(--clr-primary-medium);
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  transition: background-color 0.25s ease;
+ }
+
+ .btn-primary:hover {
+  background-color: var(--clr-primary-dark);
+ }
+
+ .btn-nav {
+  position: relative;
+  z-index: 20;
+ }
+
+ .btn--disabled {
+  background-color: var(--clr-neutral-dark);
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+ }
+
+
+
+
+
 
 
 
