@@ -224,6 +224,7 @@ nav ul {
 
 nav ul li {
   padding: 1rem;
+/.;
 }
 
 nav ul li:not(:first-child) {
@@ -684,7 +685,7 @@ form input[type='radio']:checked::before {
 
 @media (min-width: 48rem) {
   a {
-    color; var(--clr-neutral-lightest);
+    color: var(--clr-neutral-lightest);
     font-weight: var(--fw-regular);
   }
 
@@ -692,14 +693,12 @@ form input[type='radio']:checked::before {
     padding-left: 5rem !important;
     padding-right: 5rem !important;
   }
-
   .list-container {
     background-color: transparent;
     height: fit-content;
     position: static;
     translate: 0;
   }
-
   nav ul {
     margin: 0;
     display: flex;
@@ -708,19 +707,15 @@ form input[type='radio']:checked::before {
     background-color: transparent;
     box-shadow: none;
   }
-
   nav ul li {
     padding: 0;
   }
-  
   nav ul li:not(:first-child) {
     border-top: transparent;
   }
-
   nav ul li a:hover {
     text-decoration: underline;
   }
-
   .btn-nav {
     display: none;
   }
@@ -730,6 +725,11 @@ form input[type='radio']:checked::before {
   header {
     padding-left: 10rem !important;
     padding-right: 10rem !important;
+  }
+
+  a {
+    color; var(--clr-neutral-lightest);
+    font-weight: var(--fw-regular);
   }
 }
 /* Utility classes */
