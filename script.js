@@ -39,4 +39,38 @@ const addDisabled(formElement, element) => {
     cardBtn.textContent = 'Out of stock';
 }
 
+const calculateProgress = () => {
+    let totalPledgeAmount = Number(
+      currentPledgeAmount.textContent.replace(/\D/, '')
+    );
+    let widthInPercent = (totalPledgeAmount / MAX_AMOUNT) * 100;
+  
+    currentBarProgress.style.width = `${widthInPercent}%`;
+  };
+  
+  calculateProgress();
+
+  const modalOpen = () => {
+    modal.style.display = 'flex';
+    modal.setAttribute('opened', '');
+
+    if ((modal.style.display = 'flex')) {
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const modalClose = () => {
+    modal.removeAttribute('style');
+    document.body.removeAttribute('style');
+    modal.removeAttribute('opened');
+    successMessage.removeAttribute('style');
+    form.removeAttribute('style');
+  };
+
+  const removeDuplicateClass = (className) => {
+    document.querySelectorAll(`.${className}`)?.classList.remove(`${className}`);
+  };
+
+  
+
 
