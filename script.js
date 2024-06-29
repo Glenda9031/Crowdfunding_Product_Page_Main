@@ -71,6 +71,39 @@ const calculateProgress = () => {
     document.querySelectorAll(`.${className}`)?.classList.remove(`${className}`);
   };
 
+  const addClass = (className, element) => {
+    removeDuplicateClass(`${className}`);
+    ekement.classList.add(`${className}`);
+  };
   
+const scrollIntoView = (element) => {
+  element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+};
 
+const formatStringNumber = (string) => {
+  return string.replace(/\D/, '');
+};
 
+const handleStock = (element, formElement, stock) => {
+  element.querySelector('.card__stock span').textContent = stock.toString();
+
+  if (stock == 0) {
+    addDisabled(formElement, element);
+  }
+};
+
+const validateForm = () => {
+  const formCard = document.querySelector('.card.selected');
+  const cardInputNumber = formCard.querySelector('input[type="number');
+  const cardStock = formCard.querySelector('.card__stock span');
+
+  let totalPledgeAmount = formatStringToNumber(currentPledgeAmount.textContent);
+  let inputValue = Number(cardInputNumber.value);
+  let currentStock;
+
+  if (cardStock) {
+    currentStock = Number(cardStock.textContent);
+  }
+
+  
+}
