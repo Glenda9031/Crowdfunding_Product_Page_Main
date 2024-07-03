@@ -1,30 +1,30 @@
-// DOM Elements
-
+// DOM elements
 const header = document.querySelector('header');
 const navButton = document.querySelector('nav .btn-nav');
 const cards = document.querySelectorAll('.about .card');
 const form = document.querySelector('form');
 const list = document.querySelector('#listContainer');
-const currentPledgeAmount = document.querySelector('#currentPAmount');
-const currentBackersAmount = document.querySelector('.backers_people . backer__title');
+const currentPledgeAmount = document.querySelector('#currentAmount');
+const currentBackersAmount = document.querySelector(
+  '.backers__people .backers__title'
+);
 const currentBarProgress = document.querySelector('#currentProgress');
 const backProject = document.querySelector('#backProject');
 const bookmarkProject = document.querySelector('#bookmarkProject');
+const bookmarkProjectText = document.querySelector('#bookmarkProject span');
 const modal = document.querySelector('.modal');
 const closeModalButton = document.querySelector('#closeModalBtn');
 const selectRewardButtons = document.querySelectorAll('.reward');
-const inputRadios = document.querySelectorAll('input[nam="reward-group"]');
+const inputRadios = document.querySelectorAll("input[name='reward-group']");
 const amountInStock = document.querySelectorAll('.card__stock span');
 const successMessage = document.querySelector('.success');
 const successMessageButton = document.querySelector('#closeMessage');
 
 // assets
+const navButtonOpen = './images/icon-hamburger.svg';
+const navButtonClose = './images/icon-close-menu.svg';
 
-const navButtenOpen = './images/icon-hamburger.svg';
-const navButtenClose = './images/icon-close-menu.svg';
-
-// Features
-
+// features
 const MAX_AMOUNT = 100000;
 let updatedPledgeAmount;
 let updatedBackersAmount;
@@ -156,7 +156,7 @@ const validateForm = () => {
   }
 };
 
-// Event Listeners
+// event listeners
 backProject.addEventListener('click', () => {
   removeDuplicateClass('selected');
   modalOpen();
@@ -169,7 +169,7 @@ backProject.addEventListener('click', () => {
       scrollIntoView(radio.closest('.card'));
       addClass('selected', radio.closest('.card'));
     }
-  })
+  });
 });
 
 bookmarkProject.addEventListener('click', () => {
@@ -203,10 +203,69 @@ form.addEventListener('click', (e) => {
   });
 });
 
+form.addEventListener('input', (e) => {
+  const selectedCard = document.querySelector('.card.selected');
+  const inputNumber = selectedCard.querySelector("input[type='number']");
 
+  if (e.target == inputNumber) {
+    let input = e.target.value.slice(0, 4);
 
+    e.target.value = input;
 
+    if (input == '') {
+      inputNumber.parentElement.classList.add('error');
+    } else {
+      inputNumber.parentElement.removeAttribute('class');
+    }
+  }
+});
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
+  validateForm('form');
+});
 
+navButton.addEventListener('click', () => {
+  list.classList.toggle('expanded');
+
+  if (list.classList.contains('expanded')) {
+    list.ariaExpanded = 'true';
+    navButton.firstElementChild.src = navButtonClose;
+  } else {
+    list.ariaExpanded = 'false';
+    navButton.firstElementChild.src = navButtonOpen;
+  }
+});
+
+successMessageButton.addEventListener('click', () => {
+  modalClose();
+});
+
+document.addEventListener('mouseup', (e) => {
+  const isModalOpen = modal.hasAttribute('opened');
+
+  if (isModalOpen) {
+    if (e.target == modal) {
+      modalClose();
+    }
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  const isModalOpen = modal.hasAttribute('opened');
+
+  if (isModalOpen) {
+    if (e.key === 'Escape') {
+      modalClose();
+    }
+  }
+});
+document.addEventListener('scroll', () => {
+  if (scrollY > 100) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
